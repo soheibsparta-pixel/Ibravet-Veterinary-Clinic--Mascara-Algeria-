@@ -846,44 +846,66 @@ section:last-of-type {
   left: 500px;
   color:#ffffff;
 }
-/* ================= MOBILE RESPONSIVE ================= */
+/* ================= MOBILE RESPONSIVE FIX ================= */
 @media (max-width: 768px) {
 
-  /* NAVBAR */
+  /* منع الخروج من الشاشة */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* ===== NAVBAR (ما نكسروشهاش) ===== */
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row; /* 🔥 مهم: تبقى صف */
+    padding: 8px 10px;
+  }
+
+  .nav-left img.circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  #clinic-name {
+    font-size: 14px;
+  }
+
+  #doctor-name {
+    font-size: 10px;
   }
 
   .menu {
-    flex-direction: column;
     gap: 10px;
-    width: 100%;
   }
 
+  .menu li a {
+    font-size: 12px;
+  }
+
+  /* زر الحجز */
   .btnr {
-    position: static;
-    margin-top: 10px;
+    position: static; /* 🔥 أهم إصلاح */
+    margin-left: 5px;
+    padding: 6px 10px;
+    font-size: 12px;
   }
 
-  /* HERO */
+  /* ===== HERO ===== */
   .hero {
-    padding-left: 20px;
+    padding: 20px;
     height: auto;
     text-align: center;
+    flex-direction: column;
   }
 
   #best {
-    font-size: 28px;
+    font-size: 26px;
     white-space: normal;
-    left: 0;
-    top: 0;
+    position: static;
   }
 
   #exprt {
     white-space: normal;
-    left: 0;
-    top: 0;
+    position: static;
   }
 
   .btn,
@@ -893,21 +915,25 @@ section:last-of-type {
     margin: 10px auto;
   }
 
-  /* CAT + BUBBLE */
+  /* ===== CAT ===== */
   .cat {
     position: static;
     width: 120px;
     margin: 20px auto;
-    display: block;
   }
 
   .speech-bubble {
     position: static;
     margin: 10px auto;
     text-align: center;
+    max-width: 90%;
   }
 
-  /* CONTACT */
+  .speech-bubble::after {
+    display: none;
+  }
+
+  /* ===== CONTACT ===== */
   #contact {
     height: auto;
     padding: 20px;
@@ -921,10 +947,9 @@ section:last-of-type {
   #b3,
   #hours-content {
     position: static;
-    left: 0;
-    top: 0;
     white-space: normal;
     text-align: center;
+    margin: 5px 0;
   }
 
   #location-icon,
@@ -935,14 +960,14 @@ section:last-of-type {
     margin: 10px auto;
   }
 
-  /* MAP */
+  /* ===== MAP ===== */
   .mapgogl {
     position: static;
     width: 100%;
     margin: 20px 0;
   }
 
-  /* FORM */
+  /* ===== FORM ===== */
   .container1 {
     width: 100%;
     padding: 20px;
@@ -952,7 +977,7 @@ section:last-of-type {
     flex-direction: column;
   }
 
-  /* FOOTER */
+  /* ===== FOOTER ===== */
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -963,11 +988,11 @@ section:last-of-type {
     position: static;
   }
 
-  /* DOCTOR SECTION */
+  /* ===== DOCTOR ===== */
   #pr1 {
     position: static;
     text-align: center;
     margin-top: 20px;
   }
 
-}                                           
+}
