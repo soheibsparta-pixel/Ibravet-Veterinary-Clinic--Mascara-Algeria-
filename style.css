@@ -846,13 +846,128 @@ section:last-of-type {
   left: 500px;
   color:#ffffff;
 }
-/* ================= PHONE = نفس تصميم PC ================= */
+/* ================= MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
 
-  body {
-    transform: scale(0.55); /* 🔥 صغّر الموقع */
-    transform-origin: top left;
-    width: 180%; /* مهم باش ما يتقصش */
+  /* NAVBAR */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-}                                               
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .btnr {
+    position: static;
+    margin-top: 10px;
+  }
+
+  /* HERO */
+  .hero {
+    padding-left: 20px;
+    height: auto;
+    text-align: center;
+  }
+
+  #best {
+    font-size: 28px;
+    white-space: normal;
+    left: 0;
+    top: 0;
+  }
+
+  #exprt {
+    white-space: normal;
+    left: 0;
+    top: 0;
+  }
+
+  .btn,
+  .btn-outline {
+    position: static;
+    display: block;
+    margin: 10px auto;
+  }
+
+  /* CAT + BUBBLE */
+  .cat {
+    position: static;
+    width: 120px;
+    margin: 20px auto;
+    display: block;
+  }
+
+  .speech-bubble {
+    position: static;
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  /* CONTACT */
+  #contact {
+    height: auto;
+    padding: 20px;
+  }
+
+  #b1,
+  #Adresse,
+  #address-content,
+  #b2,
+  #phone-content,
+  #b3,
+  #hours-content {
+    position: static;
+    left: 0;
+    top: 0;
+    white-space: normal;
+    text-align: center;
+  }
+
+  #location-icon,
+  #phone-icon2,
+  #clock-icon {
+    position: static;
+    display: block;
+    margin: 10px auto;
+  }
+
+  /* MAP */
+  .mapgogl {
+    position: static;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  /* FORM */
+  .container1 {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #f1, #f2, #f3, #f5 {
+    position: static;
+  }
+
+  /* DOCTOR SECTION */
+  #pr1 {
+    position: static;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+}                                           
