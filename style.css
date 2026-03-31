@@ -970,7 +970,7 @@ section:last-of-type {
   /* ===== FORM ===== */
   .container1 {
     width: 100%;
-    padding: 20px;
+    padding: 0px;
   }
 
   .row {
