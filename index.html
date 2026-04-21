@@ -66,7 +66,9 @@
     <button class="btn-outline"> 📞 0654 01 44 95</button>
   </div>
    <!-- القط -->
-    <div class="speech-bubble">
+  
+
+   <div class="speech-bubble">
     <span id="bubble-text"></span>
   </div>
  <img src="cath.png" alt="Cat moving" class="cat">
@@ -179,12 +181,14 @@
 </section>
 
 <section id="reserve">
-  <div class="container1">
+  <div class="container1" onsubmit="return validateAndSend();">
     <h2 data-lang="book_appointment">Prendre un Rendez-vous</h2>
 
-    <form onsubmit="return validateAndSend();">
+    <form  action="" method="POST">
+      
 
       <div class="row">
+        
         <div class="input-group">
           <label data-lang="full_name">Nom complet</label>
           <input type="text" id="name" placeholder="Nom + Prenom" required>
@@ -196,6 +200,7 @@
         </div>
       </div>
 
+      
       <div class="input-group">
         <label data-lang="animal_species">Espèce de l'animal</label>
         <select id="animal">
@@ -283,7 +288,7 @@
      <div class="footer-section" id="f4">
 
     <!-- القسم الرابع -->
-    <div class="footer-section" id="f5">
+    <!--<div class="footer-section" id="f5">
       <h3 data-lang="rate_services" data-lang="stars">Évaluez nos services</h3>
      <div class="rating">
   <span class="star" data-value="1">☆</span>
@@ -293,7 +298,7 @@
   <span class="star" data-value="5">☆</span>
 </div>
 <p data-lang="rate_services_description">Évaluez: <span id="user-rating">0</span> / 5</p>
-    </div>
+    </div>-->
 
   </div>
             
@@ -328,7 +333,7 @@ window.addEventListener("scroll", function () {
 });
 </script>-->
 <script></script>
-<script>
+<!--<script>
     const stars = document.querySelectorAll('.star');
 const userRating = document.getElementById('user-rating');
 let selectedRating = 0;
@@ -358,7 +363,7 @@ function highlightStars(rating) {
     }
   });
 }
-</script>
+</script>-->
 <script>
   // قائمة الرسائل التي تظهر تباعاً
 const messages = [
@@ -396,37 +401,7 @@ function showMessages() {
 // بدء الرسائل عند تحميل الصفحة
 window.addEventListener('DOMContentLoaded', showMessages);
   </script>
-  <script>
-function sendToWhatsApp() {
 
-  let name = document.getElementById("name").value;
-  let phone = document.getElementById("phone").value;
-  let animal = document.getElementById("animal").value;
-  let notes = document.getElementById("notes").value;
-
-  // تحقق بسيط
-  if(name === "" || phone === "" || notes === ""){
-    alert("Veuillez remplir tous les champs");
-    return;
-  }
-
-  // الرسالة
-  let message = 
-`📅 Nouvelle réservation - Ibravet
-
-👤 Nom: ${name}
-📞 Téléphone: ${phone}
-🐾 Animal: ${animal}
-📝 Notes: ${notes}`;
-
-  // رقم الطبيب (بدون 0)
-  let number = "213656496679";
-
-  let url = "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank");
-}
-</script>
 <script>
 function validateAndSend() {
   // جلب القيم
@@ -451,24 +426,6 @@ function validateAndSend() {
     alert("Le numéro doit contenir exactement 10 chiffres");
     return false;
   }
-
-  // تجهيز الرسالة
-  let animal = document.getElementById("animal").value;
-  let message = 
-`📅 Nouvelle réservation - Ibravet
-
-👤 Nom: ${name}
-📞 Téléphone: ${phone}
-🐾 Animal: ${animal}
-📝 Notes: ${notes}`;
-
-  // رقم الطبيب
-  let number = "213656496679";
-
-  // فتح WhatsApp بالرسالة
-  let url = "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
-  window.open(url, "_blank");
-
   return false; // منع إعادة تحميل الصفحة
 }
 </script>
@@ -476,14 +433,4 @@ function validateAndSend() {
 </html>
 
 
-<!--?php
-if(isset($_POST['submit'])){
-    $name = $_POST['name'];
-    $phone = $_POST['phone'];
-    $animal = $_POST['animal'];
-    $notes = $_POST['notes'];
 
-    // مثال بسيط (تقدر تربطها مع قاعدة بيانات لاحقاً)
-    echo "<script>alert('Envoi réussi');</script>";
-}
-?>-->
